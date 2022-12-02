@@ -84,9 +84,14 @@
   <div class="lx-post">
     <div class="lx-entry padding">
       <div>
-        <p>[toc]</p>
-<h1 id="Linux编程入门"><a href="#Linux编程入门" class="headerlink" title="Linux编程入门"></a>Linux编程入门</h1><h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><ul>
+        <h1 id="Linux编程入门"><a href="#Linux编程入门" class="headerlink" title="Linux编程入门"></a>Linux编程入门</h1><h3 id="使用技巧"><a href="#使用技巧" class="headerlink" title="使用技巧"></a>使用技巧</h3><ul>
 <li>vim显示行号<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:set nu</span><br></pre></td></tr></table></figure></li>
+<li>配置vscode连接远程服务器不需要每次输入密码<ul>
+<li>win终端输入,生成公钥：id_rsa.pub<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa</span><br></pre></td></tr></table></figure></li>
+<li>服务器端在home目录下，进入.ssh文件夹<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim authorized_keys</span><br></pre></td></tr></table></figure></li>
+<li>把win下id_rsa.pub中的内容复制到上面文件里，保存退出</li>
+</ul>
+</li>
 </ul>
 <h3 id="1、静态库制作"><a href="#1、静态库制作" class="headerlink" title="1、静态库制作"></a>1、静态库制作</h3><ul>
 <li>命名规则：<ul>
@@ -155,18 +160,18 @@
 <li>查看当前源代码<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  list/l</span><br><span class="line">  ```  </span><br><span class="line">- 查看非当前源代码</span><br></pre></td></tr></table></figure>
 list&#x2F;l xxx.cpp:行号<br>list&#x2F;l xxx.cpp:函数名<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 设置显示行数</span><br></pre></td></tr></table></figure>
 show listsize<br>set listsize<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 断点操作</span><br><span class="line">  - 设置断点</span><br></pre></td></tr></table></figure>
-  break&#x2F;b 行号<br>  break&#x2F;b 函数名<br>  break&#x2F;b 文件名：行号<br>  break&#x2F;b 文件名：函数  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 查看断点</span><br></pre></td></tr></table></figure>
-  info&#x2F;i break&#x2F;b  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 删除断点</span><br></pre></td></tr></table></figure>
-  d&#x2F;del&#x2F;delete 断点编号  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 开启断点/关闭断点</span><br></pre></td></tr></table></figure>
-  enable&#x2F;disable 断点编号           <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 设置条件断点（一般用于循环）</span><br></pre></td></tr></table></figure>
-  b 10 if i&#x3D;&#x3D;5  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 调试程序</span><br><span class="line">  - 遇到断点才停</span><br></pre></td></tr></table></figure>
-  run  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 停在第一行</span><br></pre></td></tr></table></figure>
-  start  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 继续运行 到下一个断点才停</span><br></pre></td></tr></table></figure>
-  c&#x2F;continue  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 向下执行一行代码（不会进入函数体）</span><br></pre></td></tr></table></figure>
-  n&#x2F;next  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 变量操作</span><br></pre></td></tr></table></figure>
-  p&#x2F;print 变量名（打印变量值）<br>  ptype 变量名（打印变量类型）  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 跳出循环</span><br></pre></td></tr></table></figure>
-  until  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 跳出函数体</span><br></pre></td></tr></table></figure>
-  finish<br>  &#96;&#96;&#96;</li>
+break&#x2F;b 行号<br>break&#x2F;b 函数名<br>break&#x2F;b 文件名：行号<br>break&#x2F;b 文件名：函数<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 查看断点</span><br></pre></td></tr></table></figure>
+info&#x2F;i break&#x2F;b<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 删除断点</span><br></pre></td></tr></table></figure>
+d&#x2F;del&#x2F;delete 断点编号<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 开启断点/关闭断点</span><br></pre></td></tr></table></figure>
+enable&#x2F;disable 断点编号         <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 设置条件断点（一般用于循环）</span><br></pre></td></tr></table></figure>
+b 10 if i&#x3D;&#x3D;5<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 调试程序</span><br><span class="line">  - 遇到断点才停</span><br></pre></td></tr></table></figure>
+run<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 停在第一行</span><br></pre></td></tr></table></figure>
+start<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 继续运行 到下一个断点才停</span><br></pre></td></tr></table></figure>
+c&#x2F;continue<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 向下执行一行代码（不会进入函数体）</span><br></pre></td></tr></table></figure>
+n&#x2F;next<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 变量操作</span><br></pre></td></tr></table></figure>
+p&#x2F;print 变量名（打印变量值）<br>ptype 变量名（打印变量类型）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 跳出循环</span><br></pre></td></tr></table></figure>
+until<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- 跳出函数体</span><br></pre></td></tr></table></figure>
+finish<br>&#96;&#96;&#96;</li>
 </ul>
 
       </div>
