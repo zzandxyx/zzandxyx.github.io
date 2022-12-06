@@ -20,14 +20,17 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="基础入门1. 生成随机数，设置随机种子。     srand((unsigned int)time(NULL))  2. 打印输出不回车。 回车：endl     cout&lt;&lt;&quot;输出&quot;;  3. break:跳出最近的循环  4. goto 跳转到FLAG位置后的代码      goto FLAG；     FLAG： &lt;!--more--&gt; 5. 数组">
+<meta property="og:type" content="article">
 <meta property="og:title" content="C++总结">
 <meta property="og:url" content="http://example.com/2022/12/06/C-%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Jae&#39;s blog">
+<meta property="og:description" content="基础入门1. 生成随机数，设置随机种子。     srand((unsigned int)time(NULL))  2. 打印输出不回车。 回车：endl     cout&lt;&lt;&quot;输出&quot;;  3. break:跳出最近的循环  4. goto 跳转到FLAG位置后的代码      goto FLAG；     FLAG： &lt;!--more--&gt; 5. 数组">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-06T05:08:53.000Z">
-<meta property="article:modified_time" content="2022-12-06T05:08:53.412Z">
+<meta property="article:modified_time" content="2022-12-06T05:13:59.278Z">
 <meta property="article:author" content="Jae">
+<meta property="article:tag" content="C++">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://example.com/2022/12/06/C-%E6%80%BB%E7%BB%93/">
@@ -170,8 +173,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2022-12-06 13:08:53" itemprop="dateCreated datePublished" datetime="2022-12-06T13:08:53+08:00">2022-12-06</time>
+              <time title="Created: 2022-12-06 13:08:53 / Modified: 13:13:59" itemprop="dateCreated datePublished" datetime="2022-12-06T13:08:53+08:00">2022-12-06</time>
             </span>
 
           
@@ -185,7 +189,644 @@
     <div class="post-body" itemprop="articleBody">
 
       
+        <h3 id="基础入门"><a href="#基础入门" class="headerlink" title="基础入门"></a>基础入门</h3><pre><code>1. 生成随机数，设置随机种子。
+    srand((unsigned int)time(NULL))
+
+2. 打印输出不回车。 回车：endl
+    cout&lt;&lt;&quot;输出&quot;;
+
+3. break:跳出最近的循环
+
+4. goto 跳转到FLAG位置后的代码
+     goto FLAG；
+    FLAG：
+&lt;!--more--&gt;
+5. 数组:
+    1.定义 
+    数据类型 数组名[数组长度]
+    数据类型 数组名[数组长度] = &#123;值1，值2，。。。&#125;
+    数据类型 数组名[] = &#123;值1，值2，...&#125;
+    
+    2.特点：放在连续的内存空间，每个元素都是相同类型，从0开始
+
+6. 注释
+    全部注释： CTRL+K+C
+    取消注释： CTRL+K  CTRL+U
+
+7.查看数据在内存中所占空间大小：sizeof
+
+7. 获取数组arr中元素的个数：sizeof(arr):arr数组所占空间；
+    sizeof(arr)/sizeof(arr[0])
+
+8. 打印数组名显示数组首地址:cout&lt;&lt;arr&lt;&lt;endl;
+    数组第一个元素的地址：cout&lt;&lt;arr[0]&lt;&lt;endl;
+
+2022.06.04
+9.  冒泡排序：
+    外层循环：总共排序轮数：元素个数-1
+    内层循环：对比次数：元素个数-当前轮数-1
+
+2022.06.05
+10. 二维数组：
+    1.int arr[2][3];
+    1. int arr[2][3]=
+        &#123;
+        &#123;1,2,3&#125;,
+        &#123;4,5,6&#125;
+        &#125;;
+    2. int arr[2][3] = &#123;1,2,3,4,5,6&#125;;
+    3. int arr[][3] = &#123;1,2,3,4,5,6&#125;;
+
+11. 二维数组名：
+    二维数组占用内存空间：sizeof(arr)
+    第一行占用内存：sizeof(arr[0])
+    第一个元素占用内存：sizeof(arr[0][0])
+
+    二维数组行数 = sizeof(arr)/sizeof(arr[0])
+    二维数组列数 = sizeof()
+
+    二维数组首地址：cout&lt;&lt;(int)arr&lt;&lt;endl;
+
+    二维数组第一个元素首地址：cout&lt;&lt;(int)&amp;arr[0][0]&lt;&lt;endl;
+
+
+2022.06.06
+12. 如果函数不需要返回值，使用void定义。
+
+
+13.  函数的形式：
+    无参无返
+    有参无返
+    无参有返
+    有参有返
+
+14. 函数的声明：只写头部，不写具体代码实现
+    int max(int a,int b);
+    
+    可以在main函数后写函数的定义；
+
+15. 函数分文件编写：
+    1.创建 .h后缀名的头文件：
+    1. 创建 .cpp后缀名的源文件：
+    2. 在头文件中写函数的声明：导入 #include&lt;iostream&gt; using namespace std;
+    3. 在源文件中写函数的定义：导入 #include&lt;swap.h&gt; 
+    4. 主函数：导入 #include&quot;swap.h&quot; 
+
+16. 指针：就是一个地址（保存一个变量的十六进制地址）
+    指针定义： 数据类型*指针变量名  int * p; 
+        p = &amp;a; 建立数据a和指针p直接的关系
+    指针使用：*p 表示找到了指针所指地址中的数据
+        *p = 100; 修改此内存中的数据为100
+
+    指针所占空间：x64 :32位系统下占4个字节；64位下占8个字节；
+
+17. 空指针：指向内存中编号为0的空间，用于指针变量初始化；
+    int * p = NULL;
+
+    空指针不能访问,0~255之间的内存编号是系统占用，因此不能访问；使用*p;
+
+18.  野指针：指针指向非法空间
+    int * p = (int *)0x1108;
+
+19. const修饰指针: const修饰啥啥就不能改
+    1. const修饰指针 --常量指针：const int * p = &amp;a;
+                指针指向可以修改（可以指向别的常量）p = &amp;b;(可以）
+                指针指向的值不能修改。*p = 20;(错误）
+    2. const修饰常量 --指针常量：int * const p = &amp;a;
+                指针的指向不能修改；p = &amp;b;(错误）
+                指针指向的值可以修改；*p = 100;（修改a中值为100）
+    3. const即修饰指针又修饰常量：const int * const p = &amp;a;
+                指针指向和指针指向的值都不能改；
+
+20. int * p;整形指针，p++:自动加4；
+
+21.  函数：swap(,)
+    1. swap(a,b):值传递--不修改实参；
+    2.  swap(&amp;a,&amp;b):地址传递--修改实参；
+
+
+22. 传入数组到函数中：bubbleSort(arr,len)---传入数组名、数组长度；
+        void bubbleSort(int * arr,int len)--这里的arr表示指针？？还是数组？？
+
+23. 结构体
+    1. 定义 struct Student&#123;
+
+            &#125;;
+    2. 创建结构体变量
+        2.1 struct Student s1;	struct可以省略
+        2.2 struce Student s2=&#123;&#125;;
+        2.3 定义结构体时创建 struct Student&#123;
+
+            &#125;s3;
+
+24. 结构体指针：Student * p = &amp;s;
+    使用指针访问结构体中的属性：p-&gt;name;
+
+25.  将函数形参改为指针，减少内存空间使用；形参中加入const, 不能修改形参。
+
+
+26. 生成0~60之间的random(随机数)：random= rand()%60;   
+
+
+27. 通讯录系统：
+    1. 显示界面
+    2. 定义联系人结构体、定义通讯录结构体，包含联系人数量、联系人结构体数组
+    3. 实例化一个通讯录结构体AddrBook abs，联系人结构体数组的个数用宏定义#define MAX 1000表示
+    4. 添加联系人：要修改实参，选择地址传入，函数定义接收一个结构体指针，eg:
+                    addperson(&amp;abs),        void addperson(AddrBook * abs)
+    5. 显示联系人：x==y? 1: 2
+    6. 删除联系人：预先定义一个查找指定联系人下标的函数，找到返回下标，没找到返回-1；
+            将此联系人后一位向前移，覆盖当前联系人。
+    7. 查找联系人：
+    8. 修改联系人：
+    9. 清空联系人：将联系人数量置0，逻辑删除
+    10. 按键清除屏幕显示：每个函数后加上
+                system(&quot;pause&quot;)
+                system(&quot;cls&quot;)
+
+
+#########################################C++核心编程#########################################
+
+28. 内存分区：
+    程序运行前：
+        代码区：存放写的二进制代码、共享、只读；
+        全局区：全局变量、静态变量--static、字符串常量 、const修饰的全局变量（全局常量）
         
+    
+    栈区：由编译器管理和释放；存放局部变量、形参；不要返回局部变量地址；
+
+    堆区：程序员管理：使用new在堆区开辟数据；
+            手动释放堆区内存：delete
+
+29.  new运算符：
+    new返回的是一个地址，需要使用指针去接收，eg：int * height = new int(height);
+    返回的是该数据类型的指针；
+    释放一个数据p：delete p;
+    释放一个数组arr: delete[] arr;
+
+30. 数组名可以用指针方式定义eg: int * arr = ...   , 可以直接使用该数组名索引arr[i];
+
+31. 引用：给变量起别名 
+    本质：指针常量
+        int &amp;ref = a;  等价于 int * const ref = &amp;a;
+        cout&lt;&lt;ref&lt;&lt;endl; 等价于 cout&lt;&lt;*ref&lt;&lt;endl;
+
+    语法： 数据类型 &amp;别名 = 原名
+    注意：1. 引用必须要初始化，eg: int &amp;b;
+              1. 引用初始化后不能修改，eg: int &amp;b =a; int &amp;b = c;
+
+32. 函数传参：
+    1. 值传递：形参不修饰（修改）实参
+    2. 地址传递：形参修饰（修改）实参
+    3. 引用传递：形参修饰（修改）实参
+
+33. 引用做函数返回值：------------------------------------返回的是变量本身
+    1. 不要返回局部变量的引用
+    2. 函数的调用可以作为左值
+
+34. 常量引用：修饰形参防止修改实参
+    const int &amp; ref = 10; 等价于 int temp = 10; const int&amp; ref  = temp;
+
+35. 函数默认参数：
+    语法：返回值类型 函数名（形参=默认值）&#123;&#125;
+    注意：1. 某个形参位置有了默认参数，此位置右边所有位置都要有默认参数
+              1. 函数声明有了默认参数，函数实现不能有默认参数
+
+36.  函数占位参数：
+    语法：返回值类型 函数名（数据类型）&#123;&#125;
+    特点：占位参数可以有默认参数 eg: 返回值类型 函数名（数据类型=10）&#123;&#125;
+
+37. 函数重载
+    // 让函数名相同 提高复用性
+
+    // 条件
+    // 1. 同一作用域下
+    // 2. 函数名相同
+    // 3. 参数类型（int、double）不同、或者参数个数不同、或者参数顺序不同
+
+38. 对象：有属性、行为，具有相同性质的对象可以抽象为类
+    类中属性和行为---成员
+    属性----成员属性、成员变量
+    行为----成员函数、成员方法
+
+    访问权限：
+        公共权限 public        成员   类里               类外都能访问
+        保护权限 protected  成员   类里可以访问  类外不能访问	子可以访问父的保护内容
+        私有权限 private      成员   类里可以访问  类外不能访问	子不能访问父的私有内容
+
+39. struct和class区别：
+    struct  默认权限   公共  publlic
+    class    默认权限   私有  private
+
+40. 成员属性私有化，自己控制读写权限，提供公共方法来操作属性
+    只读--get、只写--set、可读可写
+
+41. 将类的声明写入头文件中：
+    #pragma once
+    #include&lt;iostream&gt;
+    using namespace std;
+    类的实现写在源文件中，并添加头文件：
+    	#include &quot;Point.h&quot;
+    主函数添加头文件即可：
+    #include &quot;Point.h&quot;
+
+42. 类的初始化和清理：构造函数和析构函数
+    构造函数：没有返回值 不写void
+        与类名相同、可以有形参、可以发生重载
+        创建对象时自动调用一次构造函数
+    析构函数：没有返回值 不写void
+        类名前加~、没有形参、不能发生重载
+        对象销毁前自动调用一次
+        用于释放堆区开辟的数据
+    
+    构造函数和析构函数每个对象均有，如果我们不写，程序会自动生成一个空的构造函数和析构函数。
+  
+43.  构造函数:
+    定义：
+        按参数：无参构造和有参构造
+        按类别：普通构造 eg: Person() &#123; &#125;和拷贝构造 eg: Person(coinst Person &amp;p) &#123; &#125;
+    调用：	
+        1. 括号法 eg: Person p1; Person p2(10); Person p3(p2);
+        注意： 调用默认构造不要加（）；
+        
+        2. 显示法 eg: Person p2 = Person(10);
+        注意：Person(10)是匿名对象，当前行执行结束，系统会立即回收匿名对象
+                  不要利用拷贝构造函数初始化匿名对象；Person(p3);
+
+        3. 隐式转换法 eg: Person p2 = 100 相当于 Person p2 = Person(10);
+                Person p3 = p2 相当于 Person p3  = Person(p2);
+
+44. 拷贝构造函数调用时机
+    1. 使用已经创建完毕的对象来初始化一个新对象
+    2. 值传递的方式给函数传值---隐式转换法
+        ——把一个创建好的对象p1作为实参传入一个函数，函数使用形参p接收，
+            相当于 Person p = p1,隐式转换法调用构造函数
+    3. 值方式返回局部对象---隐式转换法
+        
+
+45.  构造函数调用规则：
+    创建一个类，c++编译器默认提供三种构造函数：默认无参构造函数、默认析构函数、默认拷贝构造函数
+
+    1. 用户定义了有参构造函数，c++不再提供无参构造函数，但是回提供默认拷贝构造函数
+    2. 用户定义拷贝构造函数（浅拷贝），c++不提供别的构造函数
+
+46. 深拷贝、浅拷贝
+    浅拷贝：赋值操作，
+        问题：堆区内存重复释放。
+        解决：使用深拷贝复制堆区数据。
+    深拷贝：自己写拷贝函数，将堆区数据解引用后赋值到新的内存空间，与原内存空间地址不同
+        Person(const Person &amp;p)&#123; &#125;
+
+47.  析构代码释放规则：先进后出。
+
+48. 初始化列表：
+    语法1：构造函数() : 属性1（值1）,属性2（值2）&#123; &#125;
+    语法2：Person(int a,int b,int c) :m_A(a), m_B(b), m_C(c) &#123; &#125;
+
+49. 当其他类对象作为本类成员，构造对象向构造类对象，再构造自身。析构顺序相反。
+
+50.  静态成员变量：不属于某个对象，所有对象都共享同一份数据，类外不能访问私有成员变量
+    // 1. 所有对象共享一份数据
+
+    // 2. 编译阶段就分配内存，代码区
+
+    // 3. 类内声明，类外初始化操作
+
+    访问方式：1. 通过对象访问 eg: p1.m_A
+        1. 通过类名访问 eg: Person::m_A
+
+51.  静态成员函数：
+    1. 共享一个函数
+    2. 静态成员函数  只能访问  静态成员变量
+    3. 有访问权限、
+
+52. 非静态成员变量属于类的对象上；
+    空对象占用字节空间为1；
+
+53. this指针的用途：
+    1、解决名称冲突
+
+    2、返回对象本身用*this，引用方式返回，eg: Person &amp; 函数名() &#123; return *this&#125;
+
+54. 空指针访问成员函数：
+    空指针不能访问成员属性；加入判断函数增强函数健壮性
+    if (this ==NULL)
+    &#123;
+        return;
+    &#125;
+
+55. const修饰成员函数--常函数 eg: void showPerson() const &#123; &#125;
+    1. 内部不能修改成员属性 
+    2. 成员属性声明加关键字 mutable后，常函数中依然可以修改 eg： mutable int m_B;
+    
+56. 常对象：对象实例化前加const，eg：const Person p;
+    1. 不能修改对象的属性
+    2. 属性加mutable后可以修改
+    3. 只能调用常函数，因为普通函数可以修改成员属性
+        
+57. 友元：让类外的函数或类访问类的私有成员
+    实现：
+        1. 全局函数做友元，类里面添加 friend void 全局函数名(类名)
+
+
+
+
+
+
+
+
+
+58. 加法重载：
+调用实质：
+59. p3 = p1.operator+(p2)
+60. p3 = operator+（p1,p2）	
+
+61. 成员函数加法重载
+        //Person operator+(Person&amp; p)
+        //&#123;
+        //	Person temp;
+        //	temp.m_A = this-&gt;m_A + p.m_A;
+        //	temp.m_B = this-&gt; m_B + p.m_B;
+
+        //	return temp;
+        //&#125;
+62. 全局函数加法重载
+        Person operator+(Person &amp;p1,Person &amp;p2)
+        &#123;
+            Person temp;
+            temp.m_A = p1.m_A + p2.m_B;
+            temp.m_B = p1.m_A + p2.m_B;
+
+            return temp;
+        &#125;
+
+63. 左移运算符重载
+64. 只能全局函数实现，本质：operator&lt;&lt;(cout,p) = cout&lt;&lt;p;
+    ostream &amp; operator&lt;&lt;(ostream&amp; cout, Person&amp; p)
+    &#123;
+        cout &lt;&lt; p.m_A &lt;&lt; p.m_B &lt;&lt; endl;
+
+        return cout;
+    &#125;
+
+65. 链式编程，需要每次调用完函数后依旧是原始对象，所以上面需
+要返回&lt;&lt;的对象类型，因为cout的拷贝构造函数不能使用，所以要加上&amp;。
+
+66.  前置递增重载：成员函数实现，返回引用
+后置递增重载：成员函数实现，需要括号里加占位参数，返回值
+
+67. 赋值运算符重载：
+    1. 如果数据开辟在堆区，需要利用深拷贝（重新开辟一个堆区数据）
+
+
+68. 匿名对象--不创建对象：类名+小括号，eg: MyAdd()
+
+69. 继承好处：公共信息写在一个类里
+子类语法：class 子类：继承方式 父类
+子类--派生类
+父类--基类
+
+70. 继承方式：
+公共权限：类内、类外可以访问
+保护权限：类外不能访问
+    1. 公共继承：
+        父类公共权限--子类依然是公共权限
+        父类保护权限--子类依然是保护权限
+        父类私有权限--子类不能访问
+    2. 保护继承
+        父类公共权限--子类保护权限
+        父类保护权限--子类保护权限
+    3. 私有继承
+        父类公共权限--子类依然是私有权限
+        父类保护权限--子类依然是私有权限
+71. 子类继承父类中所有的非静态属性
+
+72. 查看类属性结构，打开vs开发人员命令提示符：
+    1. cl /d1 reportSingleClassLayout+类名 文件名称
+
+73. 继承中的构造顺序：先构造父类，再构造子类；析构顺序与构造顺序相反
+74. 父类和子类同名问题：
+    访问子类同名成员：直接访问，eg: s.m_A
+    访问父类同名成员：需要加作用域, eg: s.Base::m_A
+    PS：子类出现和父类同名成员函数，子类会隐藏掉父类的所有成员函数，需要加作用域调用
+    
+75. 同名静态成员处理：
+    1. 通过对象访问，语法：子类对象.父类类名：：属性
+    2. 通过类名访问，语法：子类：：父类：：属性
+76. 菱形继承问题：虚继承解决，语法：class  子类：virtual public 父类 &#123;&#125;；
+77. 多态，利用父类指针访问子类数据：
+静态多态：函数重载、运算符重载
+动态多态：派生类和虚函数实现运行时多态
+    满足条件：1. 有继承关系；2. 子类重写父类虚函数--重写：函数名 返回值类型 参数列表完全相同
+    使用：父类的指针或引用指向子类对象
+    子类发生重写后，子类继承的父类虚函数表的指针指向子类的函数地址
+78. 开闭原则：对扩展进行开放，对修改进行关闭
+79. 纯虚函数，语法：virtual 返回值类型 函数名（参数列表）=0；
+80. 抽象类：类中有纯虚函数
+    1. 特点：
+        i. 无法实例化对象
+        ii. 子类必须重写抽象类中的纯虚函数，否则也属于抽象类
+81. 父类指针在析构的时候，不会调用子类中析构函数，导致子类如果有堆区属性，出现内存泄露
+    用于通过父类指针释放子类对象，如果子类堆区没有数据，可以不写虚析或纯虚析构
+    解决：虚析构：在父类析构函数前加 virtual；
+        纯虚析构：类内声明：virtual ~Animal()=0;
+                类外实现：Animal::~Animal() &#123; &#125;
+                
+        PS:类有了纯虚析构变成抽象类
+        
+82. 写文件：
+    1. 包含头文件，#include&lt;fstream&gt;
+    2. 创建对象流，ofstream ofs
+    3. 打开文件，ofs.open（&quot;路径&quot;，打开方式）
+        i. 打开方式：
+            1) ios::in 为读文件而打开文件
+            2) ios::out 为写文件而打开文件
+    4. 写入文件，ofs&lt;&lt;&quot;&quot;&lt;&lt;endl;
+    5. 关闭文件，ofs.close()
+83. 读文件：
+    1. 包含头文件，#include&lt;fstream&gt;
+    2. 创建对象流，ifstream ifs
+    3. 打开文件，ifs.open（&quot;路径&quot;，打开方式）
+        i. 打开方式：
+            1) ios::in 为读文件而打开文件
+            2) ios::out 为写文件而打开文件
+    4. 读数据
+        1. char buf[1024] = &#123; 0 &#125;;
+        while (ifs &gt;&gt; buf)
+        &#123;
+            cout &lt;&lt; buf &lt;&lt; endl;
+        &#125;
+        
+        2. char buf[1024] = &#123; 0 &#125;;
+        while (ifs.getline(buf, sizeof(buf)))
+        &#123;
+            cout &lt;&lt; buf &lt;&lt; endl;
+        &#125;
+        
+        3. 包含头文件，#include&lt;string&gt;
+        string buf;
+    
+        while ( getline(ifs, buf))
+        &#123;
+            cout &lt;&lt; buf &lt;&lt; endl;
+        &#125;
+        
+        
+    5. 关闭文件，ifs.close()
+84. 二进制写文件：
+    4.写文件
+        Person p = &#123; &quot;张三&quot;,18 &#125;;
+        ofs.write((const char *)&amp;p, sizeof(Person));
+85. 二进制读文件：
+    ifstream ifs;
+
+    ifs.open(&quot;person.txt&quot;, ios::in | ios::binary);
+
+    if (!ifs.is_open())
+    &#123;
+        cout&lt;&lt;&quot;文件打开失败&quot;&lt;&lt;endl;
+        return;
+    &#125;
+
+    Person p;
+    ifs.read((char*)&amp;p, sizeof(Person));
+
+    cout &lt;&lt; p.m_Name &lt;&lt; p.m_Age &lt;&lt; endl;
+
+    ifs.close();
+    
+
+
+82. 项目中：
+    1. 头文件：写出类的整体，不写实现
+    2. cpp文件：加上头文件类的作用域，写出实现
+    3. 主函数：
+
+
+83. 职工管理系统：
+    1. 添加新职工
+        1. 问增加几个人
+        2. 输入信息
+        3. 记录信息 保存到数组指针中
+    2. 把文件中的数据导入数组中
+84. 排序算法：
+    1. 指定一个最大值，
+85. 指针：
+    1. 创建指针时没有初始化，p会指向一个随机地址，但创建指针的过程不包含对某个空间的开辟。int * p;   *p = 12;
+    2. NULL指针表示不指向任何地址的指针，不能解引用。
+    3. 定义对象后再定义指向这个对象的指针，不清楚指针指向哪里，一律初始化为NULL。
+    4. 指针的指针，指向指针地址的指针。Int a = 10; Int * p_a = &amp;a; int ** pp_a = &amp;p_a;  p_a存放a的地址，pp_a存放p_a的地址
+86. 读取文件：ifs.eof() 返回true，是读到文件结束符0XFF
+</code></pre>
+<h3 id="提高编程"><a href="#提高编程" class="headerlink" title="提高编程"></a>提高编程</h3><pre><code>1.  函数模板：template&lt;class T&gt; ; void mySwap(T &amp;a,T&amp;b);
+    1. 目的：将类型参数化
+    2. 使用：
+        1. 自动类型推导：mySwap(a,b)
+        2. 显示指定类型：mySwap&lt;int&gt;(a,b);
+    3. 注意事项：
+        1. 自动推导必须推导出一致的数据类型才可以使用
+        2. 模板必须要确定出T的数据类型才可以使用，比如使用显示指定类型
+2.  选择排序算法：
+    1. 外侧循环 i：设定 I 为最小值或最大值的下标
+    2. 内侧循环起始位 j=i+1   :  遍历一遍数据查看 I 对应的数据是不是最大值或最小值
+        1. 如果不是 j=max
+    3. 如果  max！= I，交换I j的数据
+3.  普通函数与函数模板区别：
+    1. 普通函数可以发生隐式类型转换：eg  :  10 + c =109
+    2. 函数模板 用自动类型推导，不可以发生隐式类型转换
+    3. 函数模板 用显示指定类型，可以发生隐式类型转换
+4.  普通函数和函数模板的调用规则------- 最好不要让函数模板和普通函数重名
+    1. 如果普通函数和函数模板都可以调用，优先调用普通函数
+    2. 使用空模板参数列表 强制调用函数模板；eg：myprint&lt;&gt;(a,b);
+    3. 函数模板可以发生函数重载;eg:void myPrint(T a, T b,T c) ;    void myPrint(T a, T b);
+    4. 如果函数模板口可以产生更好的匹配，优先调用函数模板
+5.  类模板的成员函数在调用时才创建；
+6.  类模板对象做函数参数：实例化模板对象：Person&lt;string, int&gt; p(&quot;猪八戒&quot;, 90); 
+    1. 指定传入对象； void printPerson1(Person&lt;string, int&gt; &amp;p)
+    2. 参数模板化；template&lt;class T1, class T2&gt;    void printPerson2(Person&lt;T1, T2&gt;&amp; p)     
+    3. 类模板化；  template&lt;class T&gt;      void printPerson3(T &amp; p)
+7.  类模板分文件编写：
+    1. 将.h 和.cpp文件写在一起，后缀名改为.hpp，使用是包含.hpp文件
+8.  函数以引用的方式返回：
+    1. 可以作为左值，接收赋值操作；eg: arr[index] = 100;
+    2. 引用返回的是数据本身，
+9.  拷贝构造：
+    1. 将this属性=传入的属性
+    2. 将this的指针 指向 新开辟的数组指针
+    3. 把传入数组的每个数据赋值到新的数组上
+10. STL:
+    1. 六大组件：容器、算法、迭代器、仿函数、适配器、空间配置器
+        1. 容器：各种数据结构
+            1) 数据结构：数组、链表、树、栈、队列、集合、映射表
+            2) 序列式容器：强调值的排序
+            3) 关联式容器：二叉树结构、各元素之间没有严格的物理上的顺序关系
+        2. 算法：各种算法，如sort、find
+            1) 质变算法:更改区间内元素的内容，拷贝、替换、删除
+            2) 非质变算法：比如 查找、计数、遍历
+        3. 迭代器：算法要通过迭代器访问容器中的元素、每个容器有自己专属的迭代器
+            1) 双向迭代器
+            2) 随机访问迭代器
+        4. 仿函数：
+11. （*it）是vector括号中的类型，相当于箱子中装的东西
+12. String:
+    1. find：从左往右找
+    Rfind:从右往左找
+    
+13. Vector:
+    1. 容量：大于等于大小
+    2. 大小：容器中元素的个数
+14.  限制修改容器的*it:
+    1. 输入加上const，iterator变成 const_iterator
+15.  支持随机访问的容器，都可以利用sort算法直接排序
+    1. 包含头文件 #include&lt;algotithm&gt;
+16.  list不可以用[] at方式访问元素，因为list本质是链表，不是连续的存储数据，迭代器也不支持
+    1. 访问第一个元素：L.front()
+    2. 访问最后一个元素：L.back()
+    3. 不支持随机访问
+17.  不支持随机访问的容器 不能使用标准算法，eg: sort。
+18.  List L降序：
+    bool myCompare(int v1, int v2)
+    &#123;
+        // 降序 让第一个数大于第二个数
+        return v1 &gt; v2;
+        &gt; 是降序
+        &lt;是升序
+    
+    &#125;
+    
+    L.sort(myCompare);
+    printList(L);
+    
+    
+19.  set插入指定数据类型，需要指定排序规则：
+    class MyCompare
+    &#123;
+    public:
+        bool operator()(Person p1, Person p2) const
+        &#123;
+            return p1.m_Age&lt; p2.m_Age;
+        &#125;
+    &#125;;
+    
+    set&lt;Person,MyCompare&gt;s1;
+20.  String 转int
+    1. String 利用 .c_str()转const char * ，利用atoi(const char *)转int
+21.  读文件：
+    1. #include&lt;iostream&gt;
+    2. ifstream ifs;
+    3. If (!ifs.Is_open())
+    4. &#123;
+        1. // 文件没打开
+    5. &#125;
+    6. While(ifs&gt;&gt;x&amp;&amp;ifs&gt;&gt;y)
+    7. &#123;
+    
+    8. &#125;
+    
+    
+    
+</code></pre>
+
     </div>
 
     
@@ -193,6 +834,9 @@
     
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"># C++</a>
+          </div>
 
         
 
@@ -262,6 +906,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="nav-number">1.</span> <span class="nav-text">基础入门</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E9%AB%98%E7%BC%96%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">提高编程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -280,7 +925,7 @@
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
